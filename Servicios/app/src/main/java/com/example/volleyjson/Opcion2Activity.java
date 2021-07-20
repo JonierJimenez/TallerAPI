@@ -1,10 +1,12 @@
 package com.example.volleyjson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +41,9 @@ public class Opcion2Activity extends AppCompatActivity {
         //datos = findViewById(R.id.textView);
         listaPokemon2 = new ArrayList<>();
         mRecyclerView2 = findViewById(R.id.recyclerViewBoton2);
+        mRecyclerView2.setHasFixedSize(true);
+        GridLayoutManager layoutManager = new GridLayoutManager(this,3);
+        mRecyclerView2.setLayoutManager(layoutManager);
         requestDatos();
     }
 
